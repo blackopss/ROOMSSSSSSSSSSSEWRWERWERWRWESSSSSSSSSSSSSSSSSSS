@@ -1,11 +1,15 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 
+const prefix = 'g!';
+const discord_token = "NDIyMDM3NzQwNTkxMzgyNTI4.DYV8zA.6vBJjF7Op9T_bH_YOwRMXqwh9vc";
 client.on('ready', () => {
-    console.log('I am ready!');
+    console.log(`Logged in as ${client.user.tag}!`);
+    console.log(`in ${client.guilds.size} servers `)
+    console.log(`[Users] ${client.users.size}`)
+	client.user.setGame(`g!v2 |Games Staton Arabic  `)
+    client.user.setStatus("dnd")
 });
-
-var prefix= "g!";
 client.on("message", message => {
     if(message.content.startsWith(prefix + 'v2')) {
      let args = message.content.split(" ").slice(1);
